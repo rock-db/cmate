@@ -2,7 +2,7 @@ use crate::{err, info};
 
 /// make cleanしてプロジェクトをクリーンアップ
 pub fn clean_project(make: String) {
-    println!("Cleaning project...");
+    info!("Cleaning project...");
     let status = std::process::Command::new(make)
         .arg("clean")
         .status()
