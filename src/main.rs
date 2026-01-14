@@ -105,7 +105,9 @@ fn handle_subcommand(config: &Config, cmd: &SubCommands) {
             // ビルド実行
             build::build_project::build_project(makefile::get_gmake::get_gmake());
         }
-        SubCommands::Clean => todo!(),
+        SubCommands::Clean => {
+            clean::clean::clean_project(makefile::get_gmake::get_gmake());
+        },
         SubCommands::Run => todo!(),
     }
 }
