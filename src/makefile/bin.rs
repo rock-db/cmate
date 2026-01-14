@@ -105,7 +105,8 @@ pub fn gen_bin(toml: CmateToml, default_cc: String, projects: &mut Vec<String>) 
 
         // libs
         if let Some(libraries) = project.libs {
-            libs = libraries;
+	    let ldlibs = libraries.iter().map(|m| format!("-l{}", m)).collect::<Vec<String>>();
+            libs = ldlibs;
         }
 
         // generate makefile for bin
